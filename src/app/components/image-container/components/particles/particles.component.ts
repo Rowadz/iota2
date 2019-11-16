@@ -13,6 +13,7 @@ export class ParticlesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    
     this.conf = testConf;
 
     console.log(this.conf);
