@@ -1,6 +1,7 @@
 <div class="nes-select">
-  <select required id="shape-selector">
-    <option value="Atoms" selected>Atoms</option>
-    <option value="Atomz">Atomz</option>
+  <select id="shape-selector" (change)="onChangeShape($event.target.value)">
+    <option [value]="shape" *ngFor="let shape of shapes">
+      {{ shape }}
+    </option>
   </select>
 </div>
