@@ -1,14 +1,15 @@
 <section>
   <button
     type="button"
-    class="nes-btn is-primary w-100"
-    onclick="document.getElementById('dialog-dark-rounded').showModal();"
+    class="nes-btn w-100"
+    [ngClass]="isBg ? 'is-warning' : 'is-primary'"
+    (click)="openModal()"
   >
-    Color
+    {{ isBg ? "Background" : "Color" }}
   </button>
-  <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+  <dialog class="nes-dialog is-dark is-rounded" [id]="id">
     <form method="dialog">
-      <p class="title">Dark and Rounded dialog</p>
+      <p *ngIf="isBg" class="title">Dark and Rounded dialog</p>
       <p>Alert: this is a dialog.</p>
       <menu class="dialog-menu">
         <button class="nes-btn">Cancel</button>
