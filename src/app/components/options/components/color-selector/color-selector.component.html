@@ -9,11 +9,19 @@
   </button>
   <dialog class="nes-dialog is-dark is-rounded" [id]="id">
     <form method="dialog">
-      <p *ngIf="isBg" class="title">Dark and Rounded dialog</p>
-      <p>Alert: this is a dialog.</p>
+      <div class="row">
+        <button
+          *ngFor="let color of colors"
+          class="nes-button col-md-1 col-xs-1 col-sm-1 m-1"
+          [ngStyle]="{
+            backgroundColor: color,
+            height: '45px'
+          }"
+          (click)="changeColor(color)"
+        ></button>
+      </div>
       <menu class="dialog-menu">
         <button class="nes-btn">Cancel</button>
-        <button class="nes-btn is-primary">Confirm</button>
       </menu>
     </form>
   </dialog>
